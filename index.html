@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- saved from url=(0112)https://service.bupt.edu.cn/v2/matter/m_start?id=568&type=0&campus=%E8%A5%BF%E5%9C%9F%E5%9F%8E%E6%A0%A1%E5%8C%BA -->
 <html lang="en" style="font-size: 100px;">
 
 <head>
@@ -52,54 +51,54 @@
     }
 
 
-    function IEVersion() {
-      var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串  
-      var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1; //判断是否IE<11浏览器  
-      var isEdge = userAgent.indexOf("Edge") > -1 && !isIE; //判断是否IE的Edge浏览器  
-      var isIE11 = userAgent.indexOf('Trident') > -1 && userAgent.indexOf("rv:11.0") > -1;
-      if (isIE) {
-        var reIE = new RegExp("MSIE (\\d+\\.\\d+);");
-        reIE.test(userAgent);
-        var fIEVersion = parseFloat(RegExp["$1"]);
-        if (fIEVersion == 7) {
-          return 7;
-        } else if (fIEVersion == 8) {
-          return 8;
-        } else if (fIEVersion == 9) {
-          return 9;
-        } else if (fIEVersion == 10) {
-          return 10;
-        } else {
-          return 6;//IE版本<=7
-        }
-      } else if (isEdge) {
-        return 'edge';//edge
-      } else if (isIE11) {
-        return 11; //IE11  
-      } else {
-        return false;//不是ie浏览器
-      }
-    }
+    // function IEVersion() {
+    //   var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串  
+    //   var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1; //判断是否IE<11浏览器  
+    //   var isEdge = userAgent.indexOf("Edge") > -1 && !isIE; //判断是否IE的Edge浏览器  
+    //   var isIE11 = userAgent.indexOf('Trident') > -1 && userAgent.indexOf("rv:11.0") > -1;
+    //   if (isIE) {
+    //     var reIE = new RegExp("MSIE (\\d+\\.\\d+);");
+    //     reIE.test(userAgent);
+    //     var fIEVersion = parseFloat(RegExp["$1"]);
+    //     if (fIEVersion == 7) {
+    //       return 7;
+    //     } else if (fIEVersion == 8) {
+    //       return 8;
+    //     } else if (fIEVersion == 9) {
+    //       return 9;
+    //     } else if (fIEVersion == 10) {
+    //       return 10;
+    //     } else {
+    //       return 6;//IE版本<=7
+    //     }
+    //   } else if (isEdge) {
+    //     return 'edge';//edge
+    //   } else if (isIE11) {
+    //     return 11; //IE11  
+    //   } else {
+    //     return false;//不是ie浏览器
+    //   }
+    // }
 
-    if (window.location.href.indexOf("opendebug") !== -1) {
-      console.log("调试模式");
-    } else {
-      if (window.location.href.indexOf("icce") !== -1 && IEVersion()) { //IE跳转
-        window.location.href = '/v2/static/html/download.html';
-      } else if (IEVersion()) { // 判断ie版本 低于11的跳转
-        if (IEVersion() != 'edge' && IEVersion() < 11) {
-          setTimeout(function () {
-            window.location.href = '/v2/static/html/download.html';
-          }, 300);
-        }
-      } else {
-        setTimeout(function () {
-          if (!history.pushState) {
-            window.location.href = '/v2/static/html/download.html';
-          }
-        }, 300);
-      }
-    }
+    // if (window.location.href.indexOf("opendebug") !== -1) {
+    //   console.log("调试模式");
+    // } else {
+    //   if (window.location.href.indexOf("icce") !== -1 && IEVersion()) { //IE跳转
+    //     window.location.href = '/v2/static/html/download.html';
+    //   } else if (IEVersion()) { // 判断ie版本 低于11的跳转
+    //     if (IEVersion() != 'edge' && IEVersion() < 11) {
+    //       setTimeout(function () {
+    //         window.location.href = '/v2/static/html/download.html';
+    //       }, 300);
+    //     }
+    //   } else {
+    //     setTimeout(function () {
+    //       if (!history.pushState) {
+    //         window.location.href = '/v2/static/html/download.html';
+    //       }
+    //     }, 300);
+    //   }
+    // }
 
     // 网页加载声明周期函数
     document.addEventListener('DOMContentLoaded', function () {
@@ -403,8 +402,6 @@
 
       document.getElementsByTagName("body")[0].appendChild(jsScript);
     }</script>
-  <script src="./resources/chunk-vendors.2aa04ba9efaa39aa2221.js"></script>
-  <script src="./resources/app.5ee66abaa3ff0b07617d.js"></script>
   <div id="progress_loading" style="display: none;">
     <div style="width: 0%;"></div>
   </div><img id="visits_collect" src="./resources/collect" style="display: none;">
